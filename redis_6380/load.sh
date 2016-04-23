@@ -4,7 +4,7 @@
 # as it does use of the /proc filesystem.
 
 num=6380
-REDIS_HOME=/home/xiaoju/redis_6380/
+REDIS_HOME=/home/ss/redis_6380/
 REDIS_PORT=$num
 EXEC=$REDIS_HOME/bin/redis-server
 CLIEXEC=$REDIS_HOME/bin/redis-cli
