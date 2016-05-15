@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# This script will be executed *after* all the other init scripts.
+# You can put your own initialization stuff in here if you don't
+# want to do the full Sys V style init stuff.
+
+touch /var/lock/subsys/local
+/home/ss/nginx/start.sh
+/etc/init.d/mysqld start
+su ss -c /home/ss/php/start-fpm.sh
+su ss -c /home/ss/redis/boot_start_redis.sh
+su ss -c /home/ss/supervisor_start.sh
