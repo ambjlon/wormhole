@@ -8,3 +8,5 @@
 7. php-fpm.conf和php.ini是php的配置文件.
 8. start-fpm.sh用来启动php. 使用sh start-fpm.sh.
 9. stop-fpm.sh用来停止php. 使用sh stop-fpm.sh.
+10. mysql_crontab_flush_logs.sh 用来定时切分mysql的慢日志 错误日志 一般查询日志, 并flush logs.
+11. mysqldump_crontab_backup.sh 用来备份数据库数据.
