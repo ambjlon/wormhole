@@ -1,0 +1,31 @@
+[mysqld]
+#mysql服务的端口
+port=56199
+#使用北京时间
+default-time-zone='+8:00'
+#数据文件的位置
+datadir=/var/lib/mysql
+socket=/var/lib/mysql/mysql.sock
+user=mysql
+# Disabling symbolic-links is recommended to prevent assorted security risks
+symbolic-links=0
+#查询日志和慢查询日志配置必须放到 mysqld section才有效
+#查询日志
+general_log=1
+log=/var/log/mysqllog/query.log
+#慢日志设置
+slow_query_log=1
+long_query_time=1
+log-slow-queries=/var/log/mysqllog/slow.log
+#binlog
+#妈蛋 binlog的配置也得放到这里. 严重怀疑/etc/init.d/mysqld 不是启动的msyqld_safe. 先动手验证起来吧~~~
+log-bin=/var/log/mysqllog/bin.log
+max_binlog_size=268435456
+expire_logs_days=7
+binlog_format="MIXED"
+
+server-id=1
+[mysqld_safe]
+#错误日志
+log-error=/var/log/mysqllog/error.log
+pid-file=/var/run/mysqld/mysqld.pid
