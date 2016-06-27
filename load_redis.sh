@@ -3,7 +3,7 @@
 # Simple Redis init.d script conceived to work on Linux systems
 # as it does use of the /proc filesystem.
 
-num=6380
+num=49986
 REDIS_HOME=/home/ss/redis/
 REDIS_PORT=$num
 EXEC=$REDIS_HOME/bin/redis-server
@@ -17,7 +17,7 @@ case "$1" in
         $EXEC $CONF
         ;;
     stop)
-        $CLIEXEC -p $num shutdown
+        $CLIEXEC -p $num -a vra22Y\&h shutdown
         ;;
     *)
         echo "Please use start or stop as first argument"
